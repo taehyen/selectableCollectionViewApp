@@ -14,6 +14,7 @@
 		297382BB21D594AC00B7D650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297382B921D594AC00B7D650 /* LaunchScreen.storyboard */; };
 		298FCE0221D59601003C823E /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298FCE0121D59601003C823E /* CustomCollectionViewCell.swift */; };
 		3545C8B821D5A476008A2E12 /* ViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545C8B721D5A476008A2E12 /* ViewControllerViewModel.swift */; };
+		3545C8BC21D5C971008A2E12 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3545C8BB21D5C971008A2E12 /* Collection+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		297382BC21D594AC00B7D650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		298FCE0121D59601003C823E /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		3545C8B721D5A476008A2E12 /* ViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerViewModel.swift; sourceTree = "<group>"; };
+		3545C8BB21D5C971008A2E12 /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				297382B721D594AC00B7D650 /* Assets.xcassets */,
 				297382B921D594AC00B7D650 /* LaunchScreen.storyboard */,
 				297382BC21D594AC00B7D650 /* Info.plist */,
+				3545C8BB21D5C971008A2E12 /* Collection+Extension.swift */,
 			);
 			path = selectableCollectionViewApp;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				298FCE0221D59601003C823E /* CustomCollectionViewCell.swift in Sources */,
 				297382B121D594AA00B7D650 /* AppDelegate.swift in Sources */,
 				3545C8B821D5A476008A2E12 /* ViewControllerViewModel.swift in Sources */,
+				3545C8BC21D5C971008A2E12 /* Collection+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

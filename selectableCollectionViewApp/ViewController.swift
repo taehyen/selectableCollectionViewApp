@@ -18,21 +18,15 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 		
-		readyForData()
+		viewModel.readyForTestData()
 		
 		readyForCollectionView()
-	}
-	
-	private func readyForData() {
-		for value in 0..<6 {
-			viewModel.items.append("\(value)")
-		}
 	}
 	
 	private func readyForCollectionView() {
 		collectionView.delegate = self
 		collectionView.dataSource = self
-		collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "CustomCollectionViewCell")
+//		collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "CustomCollectionViewCell")
 	}
 }
 
@@ -47,13 +41,23 @@ extension ViewController: UICollectionViewDataSource {
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as! CustomCollectionViewCell
-		cell.titleLabel.text = viewModel.items[indexPath.row]
+		if let item = viewModel.items[safe: indexPath.row] {
+			cell.titleLabel.text = item.text
+			if item.selectedIndex > 0 {
+				cell.selectedOrderLabel.text = "\(item.selectedIndex)"
+			} else {
+				cell.selectedOrderLabel.text = ""
+			}
+		}
 		return cell
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as! CustomCollectionViewCell
+//		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as! CustomCollectionViewCell
 		
-		cell.isSelected = !cell.isSelected
+		if viewModel.items[safe: indexPath.row] != nil {
+			viewModel.toggleSelect(index: indexPath.row)
+			collectionView.reloadData()
+		}
 	}
 }
