@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
 	@IBOutlet weak var collectionView: UICollectionView!
 	
-	public var items: [String] = []
+	let viewModel = ViewControllerViewModel()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
 	
 	private func readyForData() {
 		for value in 0..<6 {
-			items.append("\(value)")
+			viewModel.items.append("\(value)")
 		}
 	}
 	
@@ -42,12 +42,12 @@ extension ViewController: UICollectionViewDelegate {
 
 extension ViewController: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return items.count
+		return viewModel.items.count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as! CustomCollectionViewCell
-		cell.titleLabel.text = items[indexPath.row]
+		cell.titleLabel.text = viewModel.items[indexPath.row]
 		return cell
 	}
 	
